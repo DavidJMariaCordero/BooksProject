@@ -102,7 +102,7 @@
         }
         else
         {
-            <RadzenTemplateForm Data="@book" Submit="@((Book args) => { Submit(args); })">
+            <RadzenTemplateForm TItem="Book" Data="@book" Submit="Submit">
                 <div class="row">
                     <div class="col-md-6">
                         <RadzenFieldset Text="Book Info">
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <RadzenNumeric @bind-Value="@book.id" Placeholder="10" Name="BookId" />
-                                    <RadzenRequiredValidator Component="title" Text="Book Id is required" Style="position: absolute" />
+                                    <RadzenRequiredValidator Component="BookId" Text="Book Id is required" Style="position: absolute" />
                                 </div>
                             </div>
                             <div class="row">
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <RadzenTextBox @bind-Value="@book.title" style="width: 100%;" Name="BookTitle" />
-                                    <RadzenRequiredValidator Component="title" Text="Book title is required" Style="position: absolute" />
+                                    <RadzenRequiredValidator Component="BookTitle" Text="Book title is required" Style="position: absolute" />
                                 </div>
                             </div>
                             <div class="row">
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <RadzenTextBox @bind-Value="@book.excerpt" style="width: 100%;" Name="BookExcerpt" />
-                                    <RadzenRequiredValidator Component="title" Text="Book Excerpt is required" Style="position: absolute" />
+                                    <RadzenRequiredValidator Component="BookExcerpt" Text="Book Excerpt is required" Style="position: absolute" />
                                 </div>
                             </div>
                             <div class="row">

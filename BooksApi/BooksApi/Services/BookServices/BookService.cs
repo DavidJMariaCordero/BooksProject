@@ -15,6 +15,7 @@ namespace BooksApi.BookServices
         {
             _configuration = configuration;
         }
+
         public static HttpRequestMessage GetRequestMessage(Object data, string ruta, HttpMethod accion, IConfiguration configuration)
         {
             var json = JsonConvert.SerializeObject(data);

@@ -68,7 +68,7 @@ namespace BookFrontend.Pages
                 response = await bookApi.DeleteBooks(id);
                 if (response.IsSuccessStatusCode)
                 {
-                    Notification.Notify(NotificationSeverity.Error, "Error", $"Success");
+                    Notification.Notify(NotificationSeverity.Success, "Good", $"Success");
                 }
                 else
                     Notification.Notify(NotificationSeverity.Error, "Error", $"HttpResponse[{response.StatusCode}]");
@@ -102,7 +102,7 @@ namespace BookFrontend.Pages
             ShowBookForm = true;
         }
 
-        public async Task Submit(Book book)
+        public async Task Submit()
         {
             try
             {
@@ -110,6 +110,7 @@ namespace BookFrontend.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     Notification.Notify(NotificationSeverity.Success, "Good", $"Success");
+                    Cancel();
                 }
                 else
                     Notification.Notify(NotificationSeverity.Error, "Error", $"HttpResponse[{response.StatusCode}]");

@@ -22,7 +22,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Book>>> GetBooks()
+        public async Task<IActionResult> GetBooks()
         {
             var response = await bookService.GetBooks();
             if (response.IsSuccessStatusCode)
@@ -36,7 +36,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Book>> GetBooks(int id)
+        public async Task<IActionResult> GetBooks(int id)
         {
             var response = await bookService.GetBooks(id);
             if (response.IsSuccessStatusCode)
@@ -50,7 +50,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostBooks(Book book)
+        public async Task<IActionResult> PostBooks(Book book)
         {
             var response = await bookService.PostBooks(book);
             if (response.IsSuccessStatusCode)
@@ -60,7 +60,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> PutBooks(Book book, int id)
+        public async Task<IActionResult> PutBooks(Book book, int id)
         {
             var response = await bookService.PutBooks(book, id);
             if (response.IsSuccessStatusCode)
@@ -70,7 +70,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteBooks(int id)
+        public async Task<IActionResult> DeleteBooks(int id)
         {
             var response = await bookService.DeleteBooks(id);
             if (response.IsSuccessStatusCode)
